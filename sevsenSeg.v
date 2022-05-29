@@ -1,19 +1,6 @@
 /* Author: Ismael Contreras
 *  Date: 10/3/2021
 *  module: sevenSeg
-*
-*  Purpose: Set the segments of an active low seven segment display
-*
-*  Input: Four bits that represent a hexadecimal number 0 - F
-*  Output: Seven-bit pattern that is a symbolic representation of input
-*  Examples: 
-*      __       Input    Hex Value    Output   
-*     | 0|      0000       0         1000000    turn on all segments except 6
-*    5|__|1     0001       1         1111001    turn on segments 1, 2
-*		| 6|      1010       A         0001000    turn on all segments, except 3
-*	  4|__|2     1111       F         0001110    turn on 6, 5, 4, 0
-*		  3     
-*               
 */
 
 module sevsenSeg( input wire [3:0]IWire, output wire [6:0]segment);
