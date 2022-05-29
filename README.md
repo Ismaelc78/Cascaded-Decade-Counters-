@@ -1,5 +1,17 @@
 # Cascaded-Decade-Counters-
-Bidirectional counter (0.00-99.9) driven by a 10Hz clock. 7-seg displays on Altera De1 SoC
+Bidirectional counter (0.00-99.9) driven by a 10Hz clock. 
+Counter is shown on 7-Segment Displays 
+
+###### Hardware: 
+Altera De1-SoC.
+
+
+###### Software:
+Quartus Prime 18.1 & LogiSim
+
+
+###### Language:
+Verilog HDL
 
 
 ## Objective: 
