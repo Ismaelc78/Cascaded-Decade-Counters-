@@ -42,10 +42,10 @@ DFF1. The outcome will be as shown in figure 1.
 Also have to keep in mind that the DFF’s reset to 0 when the count reaches 1001 (9). 
 
 ###### _Figure 1: Reset & Presets Up Counter_
-
+![alt text](https://github.com/Ismaelc78/Cascaded-Decade-Counters-/blob/main/iamgesCDC/Fig1.png)
 
 Next will be the actual counting. For this I will build a state table: 
-
+![alt text](https://github.com/Ismaelc78/Cascaded-Decade-Counters-/blob/main/iamgesCDC/Fig2.png)
 
 For a counter/flip flop, the next state is what in the read at the D input
 Therefore, D = Q next.
@@ -62,6 +62,7 @@ Next, lets take another look at the reset. I want it to reset once the output is
 This means, once the out put is Q[3] & Q[1]. I can add that into the reset behavior of each DFF as seen in figure 2
 
 ###### _Figure 2: Resets and Presets Up Counter_
+![alt text](https://github.com/Ismaelc78/Cascaded-Decade-Counters-/blob/main/iamgesCDC/Fig3.png)
 
 Next is the overflow detector. Since I want the overflow to signal after the counter reaches nine and once it goes back to
 zero, then I can add it as another DFF. Through behavioral analysis, I can see that I will want the overflow DFF to clock in
@@ -78,7 +79,7 @@ The requirements for this counter are:
   6. Use D Flip Flops and some glue 
 
 ###### _Down Counter state table_
-
+![alt text](https://github.com/Ismaelc78/Cascaded-Decade-Counters-/blob/main/iamgesCDC/fig4.png)
 
 D3 = 0000, 1001 = (Q[3] ~^ Q[0]) & ~Q[2] & ~Q[1]
 D2 = 0101, 0110, 0111, 1000 = (~Q[3] & Q[2] & (Q[1]|Q[0])) | (Q[3] & ~Q[2] & ~Q[1] & ~Q[0])
@@ -107,7 +108,7 @@ With the use of DFF’s and some glue gates, as described earlier, I was able to
 OR gates were used for the many inputs of the reset (preset, reset, end of count). The DFF D inputs were based on the
 Boolean expressions found using the state table and diagrams. As seen in the below simulation , the results are as
 expected. A total of 5 DFF’s were used. 
-
+![alt text](https://github.com/Ismaelc78/Cascaded-Decade-Counters-/blob/main/iamgesCDC/Fig5.png)
 
 
 ###### _Part 2 Decimal Down Counter with Overflow_
@@ -115,7 +116,7 @@ expected. A total of 5 DFF’s were used.
 Similar to the Up Counter, OR gates were used for the many inputs of the reset (preset, reset, end of count). The DFF D
 inputs were based on the Boolean expressions found using the state table and diagrams. As seen in the below
 simulation, the results are as expected. A total of 5 DFF’s were used. 
-
+![alt text](https://github.com/Ismaelc78/Cascaded-Decade-Counters-/blob/main/iamgesCDC/Fig6.png)
 
 
 ###### _Part 3 Simulation: Bidirectional Decimal Counter_
@@ -125,7 +126,7 @@ and Down counter logic. The 2x1 multiplexers were used between each DFF and for 
 were used.
 
 This will allow for selection between the differences of the up and down counters. Below are the simulation results 
-
+![alt text](https://github.com/Ismaelc78/Cascaded-Decade-Counters-/blob/main/iamgesCDC/Fig7.png)
 
 ###### _Part 4 Simulation: Cascaded Decade Counters_
 
@@ -140,5 +141,5 @@ design. Below is the simulation result from Quartus.
 Key[0] = Reset
 Key[1] = Preset
 3 Images were provided to see a closer look at HEX0 values. 
-
+![alt text](https://github.com/Ismaelc78/Cascaded-Decade-Counters-/blob/main/iamgesCDC/Fig8.png)
 
