@@ -14,7 +14,7 @@
 *    4|__|2     1111       F         0001110    turn on 6, 5, 4, 0
 *	3     
 *               
-*  Written for an active low display. 0's turn on segments.* 
+*  Written for an active low display. 0's turn on segments.
 */
 
 module sevsenSeg( input wire [3:0]IWire, output wire [6:0]segment);
