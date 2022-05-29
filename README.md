@@ -42,7 +42,7 @@ DFF1. The outcome will be as shown in figure 1.
 Also have to keep in mind that the DFF’s reset to 0 when the count reaches 1001 (9). 
 
 ###### _Figure 1: Reset & Presets Up Counter_
-![alt text](https://github.com/Ismaelc78/Cascaded-Decade-Counters-/blob/main/iamgesCDC/Fig1.png)
+![alt text](https://github.com/Ismaelc78/Cascaded-Decade-Counters-/blob/main/iamgesCDC/Fig.png)
 
 Next will be the actual counting. For this I will build a state table: 
 ![alt text](https://github.com/Ismaelc78/Cascaded-Decade-Counters-/blob/main/iamgesCDC/Fig2.png)
