@@ -108,7 +108,7 @@ With the use of DFF’s and some glue gates, as described earlier, I was able to
 OR gates were used for the many inputs of the reset (preset, reset, end of count). The DFF D inputs were based on the
 Boolean expressions found using the state table and diagrams. As seen in the below simulation , the results are as
 expected. A total of 5 DFF’s were used. 
-![alt text](https://github.com/Ismaelc78/Cascaded-Decade-Counters-/blob/main/iamgesCDC/Fig5.png)
+![alt text](https://github.com/Ismaelc78/Cascaded-Decade-Counters-/blob/main/iamgesCDC/Sim5.png)
 
 
 ###### _Part 2 Decimal Down Counter with Overflow_
@@ -116,7 +116,7 @@ expected. A total of 5 DFF’s were used.
 Similar to the Up Counter, OR gates were used for the many inputs of the reset (preset, reset, end of count). The DFF D
 inputs were based on the Boolean expressions found using the state table and diagrams. As seen in the below
 simulation, the results are as expected. A total of 5 DFF’s were used. 
-![alt text](https://github.com/Ismaelc78/Cascaded-Decade-Counters-/blob/main/iamgesCDC/Fig6.png)
+![alt text](https://github.com/Ismaelc78/Cascaded-Decade-Counters-/blob/main/iamgesCDC/Sim6.png)
 
 
 ###### _Part 3 Simulation: Bidirectional Decimal Counter_
@@ -126,7 +126,7 @@ and Down counter logic. The 2x1 multiplexers were used between each DFF and for 
 were used.
 
 This will allow for selection between the differences of the up and down counters. Below are the simulation results 
-![alt text](https://github.com/Ismaelc78/Cascaded-Decade-Counters-/blob/main/iamgesCDC/Fig7.png)
+![alt text](https://github.com/Ismaelc78/Cascaded-Decade-Counters-/blob/main/iamgesCDC/Sim7.png)
 
 ###### _Part 4 Simulation: Cascaded Decade Counters_
 
@@ -141,5 +141,5 @@ design. Below is the simulation result from Quartus.
 Key[0] = Reset
 Key[1] = Preset
 3 Images were provided to see a closer look at HEX0 values. 
-![alt text](https://github.com/Ismaelc78/Cascaded-Decade-Counters-/blob/main/iamgesCDC/Fig8.png)
+![alt text](https://github.com/Ismaelc78/Cascaded-Decade-Counters-/blob/main/iamgesCDC/Sim8.png)
 
