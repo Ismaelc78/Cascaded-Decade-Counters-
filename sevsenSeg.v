@@ -5,22 +5,25 @@
 * 	Mux 2:1 used to limit/select the number of outputs 
 *
 */
+module DownCount(Clock, Reset, Preset, Overflow, Count);
 
-module sevsenSeg( input wire [3:0]IWire, output wire [6:0]segment);
+	input wire Clock, Reset, Preset;
+	output wire Overflow;
+	output wire [3:0] Count;
+	wire [3:0] Q, resetWire, Din;
+	assign Din = { (Q[3] ~^ Q[0]) & ~Q[2] & ~Q[1]  , 
+					(~Q[3] & Q[2] & (Q[1]|Q[0])) | (Q[3] & ~Q[2] & ~Q[1] & ~Q[0]), 
+					(~Q[3]& Q[1] & Q[0]) | (~Q[3] & Q[2] & ~Q[1] & ~Q[0]) | (Q[3] & ~Q[2] & ~Q[1] & ~Q[0]), 
+					~Q[0]};
+					
+	assign Count = {Q[3], Q[2], Q[1], Q[0]};
+	wire count10;
+	assign Overflow = count10;
+	assign resetWire = {Reset, Reset | Preset, Reset | Preset, Reset};
 	
-		
-		wire W, X, Y, Z;
-		assign W = IWire[3];
-		assign X = IWire[2];
-		assign Y = IWire[1];
-		assign Z = IWire[0];
-		assign segment[0] = (~W &  ~X & ~Y & Z) | (~W & X & ~Y & ~Z) | (W & ~X & Y & Z) | (W & X & ~Y & Z);
-		assign segment[1] = (~W &  X & ~Y & Z) | (W & Y & Z) | (X & Y & ~Z) | (W & X & ~Z);
-		assign segment[2] = (~W & ~X & Y &  ~Z) | (W & X & ~Z) | (W & X & Y);
-	   	assign segment[3] = (~W & X & ~Y & ~Z) | (X & Y & Z) | (W & ~X & Y & ~Z) | (~W & ~X & ~Y & Z);
-	   	assign segment[4] = (~W & X & ~Y) | (~X & ~Y & Z) | (~W & Z) ;
-		assign segment[5] = (~W & ~X & Z) | (~W & ~X & Y) |(~W & Y & Z) | (W & X & ~Y & Z) ;
-		assign segment[6] = (~W & ~X & ~Y) | (~W & X & Y & Z) | (W & X & ~Y & ~Z);
+	
+	DFlipFlop m[3:0] (.c(Clock), .r(resetWire), .p(Preset), .d(Din), .q(Q) );
+	DFlipFlop m1 (.c(Clock), .r(Reset), .d(~Q[3] & ~Q[2] & ~Q[1] & ~Q[0]), .q(count10));
+	
+endmodule
 
-	
-endmodule 
